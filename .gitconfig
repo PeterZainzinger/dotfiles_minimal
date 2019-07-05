@@ -1,0 +1,35 @@
+[user]
+	name = Peter Zainzinger
+	email = peterzainzinger@gmail.com
+[branch]
+	autosetuprebase = always
+[http]
+	postBuffer = 524288000
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[url "https://"]
+	insteadOf = git://
+[color]
+	diff = true
+	status = true
+	branch = true
+	ui = true
+[push]
+	default = current
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	d = difftool
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
